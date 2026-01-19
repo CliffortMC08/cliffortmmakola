@@ -189,3 +189,59 @@
                     document.getElementById('project-target').innerHTML += `
                         <div class="card-spec p-10 rounded-[40px] flex flex-col justify-between h-full">
                             <div>
+                                <div class="flex flex-wrap gap-2 mb-6">
+                                    ${p.tech.map(t => `<span class="bg-indigo-50 text-indigo-600 text-[8px] font-black px-2 py-1 rounded tracking-widest uppercase">${t}</span>`).join('')}
+                                </div>
+                                <h3 class="text-xl font-extrabold mb-3 leading-tight uppercase tracking-tight">${p.title}</h3>
+                                <p class="text-slate-500 text-sm font-medium mb-8 leading-relaxed">${p.description}</p>
+                            </div>
+                            <a href="${p.link}" target="_blank" class="text-[10px] font-black uppercase tracking-widest text-indigo-600 border-b-2 border-indigo-600 pb-1 w-max">Visit Project →</a>
+                        </div>`;
+                });
+
+                // Experience
+                data.experience.forEach(e => {
+                    document.getElementById('exp-target').innerHTML += `
+                        <div class="relative pl-10 border-l-2 border-indigo-50">
+                            <div class="absolute -left-[11px] top-1 w-5 h-5 bg-indigo-600 rounded-full border-4 border-white shadow-sm"></div>
+                            <h4 class="text-lg font-extrabold tracking-tight uppercase leading-none">${e.title}</h4>
+                            <p class="text-[9px] font-bold text-slate-400 uppercase mt-2 mb-6 tracking-[0.2em]">${e.company} | ${e.period}</p>
+                            <ul class="text-slate-500 text-sm space-y-3 font-medium">${e.details.map(d => `<li>• ${d}</li>`).join('')}</ul>
+                        </div>`;
+                });
+
+                // Certificates with small PDF icons
+                data.certificates.forEach(c => {
+                    document.getElementById('cert-target').innerHTML += `
+                        <div class="card-spec p-6 rounded-3xl flex flex-col gap-2">
+                            <div class="flex items-center gap-3">
+                                <i class="fas fa-file-pdf text-indigo-500"></i>
+                                <h4 class="text-sm font-black">${c.title}</h4>
+                            </div>
+                            <p class="text-[9px] font-black text-purple-600 uppercase tracking-widest pl-7">${c.provider}</p>
+                            <p class="text-xs text-slate-500 font-medium italic pl-7">${c.desc}</p>
+                        </div>`;
+                });
+
+                // Documents with large PDF logos
+                data.documents.forEach(d => {
+                    document.getElementById('doc-target').innerHTML += `
+                        <a href="${d.file}" target="_blank" class="card-spec p-8 rounded-[32px] flex flex-col justify-between aspect-square group">
+                            <div class="flex justify-between items-start">
+                                <span class="text-[9px] font-black text-slate-300 uppercase tracking-widest group-hover:text-indigo-600">${d.tag}</span>
+                                <i class="far fa-file-pdf text-indigo-200 text-xl group-hover:text-indigo-500 transition"></i>
+                            </div>
+                            <div>
+                                <h5 class="text-xs font-black uppercase tracking-tighter">${d.name}</h5>
+                                <div class="w-6 h-1 bg-indigo-600 mt-4 group-hover:w-full transition-all"></div>
+                            </div>
+                        </a>`;
+                });
+            } catch (err) { console.error("Database failed to load:", err); }
+        }
+
+        window.onresize = () => resizeCanvas(windowWidth, windowHeight);
+        init();
+    </script>
+</body>
+</html>
