@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cliffort Mmakola | Engineering & Data Science</title>
+    <!-- Font Awesome for PDF Logos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
     <style>
@@ -15,7 +17,6 @@
 
         #canvas-container { position: fixed; top: 0; left: 0; z-index: -1; pointer-events: none; }
 
-        /* Mobile Typography Scale */
         .h1-hero { font-size: clamp(2.2rem, 8vw, 5rem); line-height: 1.1; letter-spacing: -0.04em; }
         .section-label { font-size: 0.65rem; font-weight: 800; letter-spacing: 0.4em; color: #475569; text-transform: uppercase; margin-bottom: 2rem; display: block; }
         
@@ -95,28 +96,9 @@
     </header>
 
     <main class="max-w-7xl mx-auto px-6 relative z-10">
-        <!-- Technical Pillars -->
-        <section class="py-20 grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="card-spec p-8 rounded-3xl">
-                <h3 class="text-indigo-600 font-black text-[9px] uppercase tracking-widest mb-4 italic">The Foundation</h3>
-                <h4 class="text-lg font-bold">Metallurgy</h4>
-                <p class="text-slate-500 text-sm mt-2">Specialized in microstructural evaluation, failure analysis, and synthetic diamond processing.</p>
-            </div>
-            <div class="card-spec p-8 rounded-3xl">
-                <h3 class="text-purple-600 font-black text-[9px] uppercase tracking-widest mb-4 italic">The Intelligence</h3>
-                <h4 class="text-lg font-bold">AI Systems</h4>
-                <p class="text-slate-500 text-sm mt-2">Building Deep Learning pipelines, computer vision models, and data annotation workflows.</p>
-            </div>
-            <div class="card-spec p-8 rounded-3xl">
-                <h3 class="text-pink-600 font-black text-[9px] uppercase tracking-widest mb-4 italic">The Delivery</h3>
-                <h4 class="text-lg font-bold">Web & App Dev</h4>
-                <p class="text-slate-500 text-sm mt-2">Designing responsive interfaces for industrial software and curated community galleries.</p>
-            </div>
-        </section>
-
-        <!-- Dynamic Projects -->
+        <!-- Projects -->
         <section id="projects" class="py-24">
-            <span class="section-label">Digital Solutions & Gallery</span>
+            <span class="section-label">Selected Implementations</span>
             <div id="project-target" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12"></div>
         </section>
 
@@ -124,13 +106,13 @@
         <section id="experience" class="py-24 border-t border-slate-100">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
                 <div><span class="section-label">Experience</span><div id="exp-target" class="space-y-12 mt-8"></div></div>
-                <div><span class="section-label">Machine Learning</span><div id="cert-target" class="space-y-6 mt-8"></div></div>
+                <div><span class="section-label">Machine Learning Certificates</span><div id="cert-target" class="space-y-6 mt-8"></div></div>
             </div>
         </section>
 
         <!-- Document Archive -->
         <section id="documents" class="py-24 border-t border-slate-100">
-            <span class="section-label">Archive Vault</span>
+            <span class="section-label">Archive Vault (PDF Docs)</span>
             <div id="doc-target" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8"></div>
         </section>
     </main>
@@ -146,14 +128,8 @@
         function setup() {
             let canvas = createCanvas(windowWidth, windowHeight);
             canvas.parent('canvas-container');
-            
-            // RESPONSIBILITY LOGIC: Ensure mobile isn't clustered
-            if (windowWidth < 768) {
-                dotCount = 20; threshold = 110;
-            } else {
-                dotCount = 50; threshold = 180;
-            }
-            
+            if (windowWidth < 768) { dotCount = 20; threshold = 110; } 
+            else { dotCount = 50; threshold = 180; }
             for(let i=0; i<dotCount; i++) dots.push(new Node(i));
         }
 
@@ -177,8 +153,7 @@
                 if(this.pos.y<0 || this.pos.y>height) this.vel.y*=-1;
             }
             show() {
-                noStroke();
-                drawingContext.shadowColor = this.c.toString();
+                noStroke(); drawingContext.shadowColor = this.c.toString();
                 fill(this.c); circle(this.pos.x, this.pos.y, 4);
             }
             connect(others) {
@@ -189,8 +164,6 @@
                         let sc = lerpColor(this.c, others[i].c, 0.5);
                         sc.setAlpha(map(d1, 0, threshold, 140, 0));
                         stroke(sc); line(this.pos.x, this.pos.y, others[i].pos.x, others[i].pos.y);
-
-                        // Triangle fills only on Desktop
                         if (windowWidth > 768) {
                             for (let j = i + 1; j < others.length; j++) {
                                 let d2 = dist(others[i].pos.x, others[i].pos.y, others[j].pos.x, others[j].pos.y);
@@ -211,54 +184,8 @@
                 const res = await fetch('data.json');
                 const data = await res.json();
 
+                // Projects
                 data.projects.forEach(p => {
                     document.getElementById('project-target').innerHTML += `
                         <div class="card-spec p-10 rounded-[40px] flex flex-col justify-between h-full">
                             <div>
-                                <div class="flex flex-wrap gap-2 mb-6">
-                                    ${p.tech.map(t => `<span class="bg-indigo-50 text-indigo-600 text-[8px] font-black px-2 py-1 rounded tracking-widest uppercase">${t}</span>`).join('')}
-                                </div>
-                                <h3 class="text-xl font-extrabold mb-3 leading-tight uppercase tracking-tight">${p.title}</h3>
-                                <p class="text-slate-500 text-sm font-medium mb-8 leading-relaxed italic">${p.description}</p>
-                            </div>
-                            <a href="${p.link}" target="_blank" class="text-[10px] font-black uppercase tracking-widest text-indigo-600 border-b-2 border-indigo-600 pb-1 w-max">Visit Site →</a>
-                        </div>`;
-                });
-
-                data.experience.forEach(e => {
-                    document.getElementById('exp-target').innerHTML += `
-                        <div class="relative pl-10 border-l-2 border-indigo-50">
-                            <div class="absolute -left-[11px] top-1 w-5 h-5 bg-indigo-600 rounded-full border-4 border-white"></div>
-                            <h4 class="text-lg font-extrabold tracking-tight uppercase leading-none">${e.title}</h4>
-                            <p class="text-[9px] font-bold text-slate-400 uppercase mt-2 mb-6 tracking-[0.2em]">${e.company} | ${e.period}</p>
-                            <ul class="text-slate-500 text-sm space-y-3 font-medium">${e.details.map(d => `<li>• ${d}</li>`).join('')}</ul>
-                        </div>`;
-                });
-
-                data.certificates.forEach(c => {
-                    document.getElementById('cert-target').innerHTML += `
-                        <div class="card-spec p-6 rounded-3xl">
-                            <h4 class="text-sm font-black">${c.title}</h4>
-                            <p class="text-[9px] font-black text-purple-600 uppercase mt-1 mb-4 tracking-widest">${c.provider}</p>
-                            <p class="text-xs text-slate-500 font-medium italic">${c.desc}</p>
-                        </div>`;
-                });
-
-                data.documents.forEach(d => {
-                    document.getElementById('doc-target').innerHTML += `
-                        <a href="${d.file}" target="_blank" class="card-spec p-8 rounded-[32px] flex flex-col justify-between aspect-square group">
-                            <span class="text-[9px] font-black text-slate-300 uppercase tracking-widest group-hover:text-indigo-600">${d.tag}</span>
-                            <div>
-                                <h5 class="text-xs font-black uppercase tracking-tighter">${d.name}</h5>
-                                <div class="w-6 h-1 bg-indigo-600 mt-4 group-hover:w-full transition-all"></div>
-                            </div>
-                        </a>`;
-                });
-            } catch (err) { console.error("Database failed to load:", err); }
-        }
-
-        window.onresize = () => resizeCanvas(windowWidth, windowHeight);
-        init();
-    </script>
-</body>
-</html>
