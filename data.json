@@ -1,39 +1,52 @@
 {
+  "projects": [
+    {
+      "title": "Pearlite Phase Analyser",
+      "subtitle": "Microstructural Computer Vision Tool",
+      "description": "Developed an independent software solution to remove subjectivity from pearlite quantification in steel alloys. Built using a full Python stack (PyQt5, Pillow, QPainter) with automated PDF report generation via ReportLab.",
+      "tech": ["Python", "PyQt5", "Image Processing", "Event-Driven Architecture"],
+      "link": "#"
+    },
+    {
+      "title": "Live AI Mineral Identifier",
+      "subtitle": "Deep Learning Web Application",
+      "description": "Built a real-time mineral identification system using an EfficientNet-B3 model trained on 18,000+ images. Achieved 73.22% accuracy on messy, real-world data and deployed via a Gradio web interface.",
+      "tech": ["EfficientNet-B3", "Computer Vision", "Gradio", "Python"],
+      "link": "https://lnkd.in/dBuP5ShF"
+    }
+  ],
   "experience": [
     {
       "title": "Junior Metallurgist",
       "company": "Scaw Metals: Haggie-Wire and Strand",
       "period": "Apr 2021 — Present",
       "details": [
-        "Led failure analysis and root cause identification for comprehensive technical reports.",
-        "Managed lab operations and provided structured training to metallurgy interns.",
-        "Oversee process improvement initiatives and validate parameters through technical trials."
+        "Led failure analysis and root cause identification for technical reports.",
+        "Managed lab operations and mentored metallurgy interns.",
+        "Validated parameters through technical trials and process improvements."
       ]
     },
     {
-      "title": "Metallurgical Engineering Intern",
-      "company": "Glencore Coal Operations",
-      "period": "Jan 2020 — Dec 2020",
+      "title": "Engineering Internships",
+      "company": "Glencore & Element 6",
+      "period": "2019 — 2020",
       "details": [
-        "Optimized coal washing processes and magnetite recovery circuits.",
-        "Analyzed process data to improve recovery rates and reduce operational costs."
-      ]
-    },
-    {
-      "title": "Metallurgical Engineering Intern",
-      "company": "Element 6 (De Beers Group)",
-      "period": "Jan 2019 — Dec 2019",
-      "details": [
-        "Tested operational efficiency of a new chemical treatment plant for synthetic diamond units.",
-        "Authored standard operating procedures (SOPs) pre-commissioning.",
-        "Verified safety compliance via HAZOP; gained expertise in manufacturing polycrystalline diamond compacts."
+        "Glencore: Optimized coal washing processes and magnetite recovery circuits.",
+        "Element 6: Authored pre-commissioning SOPs and verified safety via HAZOP for synthetic diamond production."
       ]
     }
   ],
+  "certificates": [
+    {
+      "title": "Hands-On Data Annotation",
+      "provider": "Applied Machine Learning (LinkedIn Learning)",
+      "desc": "Practical experience in Image Classification, Object Detection, and NLP using CVAT, Roboflow, and AWS SageMaker Ground Truth."
+    }
+  ],
   "documents": [
-    { "name": "Professional CV", "file": "assets/resume.pdf", "tag": "Resume" },
-    { "name": "ALX Data Science Cert", "file": "assets/alx_cert.pdf", "tag": "Certificate" },
-    { "name": "NDip Metallurgy (TUT)", "file": "assets/tut_diploma.pdf", "tag": "Degree" },
-    { "name": "Accenture Simulation", "file": "assets/accenture_cert.pdf", "tag": "Experience" }
+    { "name": "Main Resume", "file": "assets/resume.pdf", "tag": "CV" },
+    { "name": "ALX Data Science", "file": "assets/alx_cert.pdf", "tag": "CERT" },
+    { "name": "Metallurgy Diploma", "file": "assets/tut_diploma.pdf", "tag": "DEGREE" },
+    { "name": "Annotation Cert", "file": "assets/annotation_cert.pdf", "tag": "COURSE" }
   ]
 }
