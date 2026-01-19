@@ -3,204 +3,203 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cliffort Mmakola | Engineering & Data</title>
+    <title>Cliffort Mmakola | Engineering & AI</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
         
-        body {
-            background-color: #ffffff;
-            color: #111827;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            margin: 0;
-            overflow-x: hidden;
-        }
-
-        #canvas-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: -1;
-            opacity: 0.6;
-        }
-
+        body { background-color: #ffffff; color: #111827; font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; }
+        
+        #canvas-container { position: fixed; top: 0; left: 0; z-index: -1; opacity: 0.7; }
+        
         .glass-card {
-            background: rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.6);
             backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
-            border-radius: 24px;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            border-radius: 20px;
+            transition: all 0.4s ease;
         }
 
-        .glass-card:hover {
-            transform: scale(1.01);
-            background: rgba(255, 255, 255, 0.8);
-            border: 1px solid rgba(99, 102, 241, 0.3);
-        }
+        .glass-card:hover { border: 1px solid rgba(99, 102, 241, 0.3); transform: translateY(-3px); }
 
-        .gradient-text {
-            background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+        .gradient-heading {
+            background: linear-gradient(135deg, #3b82f6 0%, #a855f7 50%, #ec4899 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .btn-gradient {
-            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
-            color: white;
-            box-shadow: 0 10px 20px rgba(99, 102, 241, 0.2);
-        }
+        .tag { font-size: 9px; font-weight: 800; letter-spacing: 0.15em; color: #6366f1; text-transform: uppercase; }
+        
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-thumb { background: #e5e7eb; border-radius: 10px; }
     </style>
 </head>
 <body class="antialiased">
 
     <div id="canvas-container"></div>
 
-    <!-- Navigation -->
+    <!-- Nav -->
     <nav class="max-w-6xl mx-auto px-8 py-10 flex justify-between items-center">
-        <div class="text-sm font-extrabold tracking-tighter uppercase">Cliffort<span class="text-indigo-600">.</span>M</div>
-        <div class="flex gap-10 text-[10px] uppercase tracking-[0.3em] font-bold text-gray-400">
-            <a href="#experience" class="hover:text-indigo-600 transition">Experience</a>
-            <a href="#documents" class="hover:text-purple-600 transition">Credentials</a>
+        <div class="text-xs font-black tracking-widest border-b-2 border-indigo-600">CLIFFORT.DIGITAL</div>
+        <div class="flex gap-8 text-[10px] font-bold uppercase tracking-widest text-gray-400">
+            <a href="#projects" class="hover:text-indigo-600 transition">Projects</a>
+            <a href="#experience" class="hover:text-purple-600 transition">Experience</a>
+            <a href="#documents" class="hover:text-pink-600 transition">Archive</a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="max-w-6xl mx-auto px-8 min-h-[80vh] flex flex-col justify-center">
+    <!-- Hero -->
+    <header class="max-w-6xl mx-auto px-8 pt-20 pb-32">
         <div class="max-w-3xl">
-            <h1 class="text-6xl md:text-8xl font-extrabold leading-[1.1] mb-8 tracking-tight">
-                Engineering <br> <span class="gradient-text">Intelligence.</span>
+            <h1 class="text-6xl md:text-8xl font-extrabold tracking-tighter mb-8 leading-[0.95]">
+                Engineering <br> <span class="gradient-heading">Innovation.</span>
             </h1>
-            <p class="text-lg md:text-xl text-gray-500 font-medium leading-relaxed mb-10">
-                Metallurgical professional merging industrial expertise with <span class="text-indigo-600 font-bold">Data Science</span> and <span class="text-purple-600 font-bold">Machine Learning</span> to optimize high-precision manufacturing.
+            <p class="text-xl text-gray-500 font-medium leading-relaxed mb-10">
+                Data Scientist and Metallurgical Engineer specialized in building <span class="text-indigo-600">Digital Twins</span>, <span class="text-purple-600">AI Visual Inspection</span>, and industrial process optimization.
             </p>
             <div class="flex gap-6 items-center">
-                <a href="mailto:c8cliffort@gmail.com" class="btn-gradient px-10 py-4 rounded-full font-bold text-sm transition hover:scale-105">Start Conversation</a>
-                <a href="https://linkedin.com/in/cliffortmmakola" target="_blank" class="text-xs font-bold uppercase tracking-widest border-b-2 border-indigo-600 pb-1">LinkedIn</a>
+                <a href="mailto:c8cliffort@gmail.com" class="bg-gray-900 text-white px-8 py-4 rounded-full font-bold text-sm hover:scale-105 transition">Collaborate</a>
+                <a href="https://linkedin.com/in/cliffortmmakola" target="_blank" class="text-xs font-black uppercase tracking-widest border-b-2 border-black pb-1">LinkedIn</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Dynamic Projects -->
+    <section id="projects" class="max-w-6xl mx-auto px-8 py-20">
+        <h2 class="tag mb-12">Featured Engineering Projects</h2>
+        <div id="project-target" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Dynamic Content -->
+        </div>
+    </section>
+
+    <!-- Experience & Education -->
+    <section id="experience" class="max-w-6xl mx-auto px-8 py-20">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+            <div>
+                <h2 class="tag mb-12">Work Experience</h2>
+                <div id="exp-target" class="space-y-12"></div>
+            </div>
+            <div>
+                <h2 class="tag mb-12">Machine Learning Training</h2>
+                <div id="cert-target" class="space-y-8"></div>
             </div>
         </div>
     </section>
 
-    <!-- Experience -->
-    <section id="experience" class="max-w-6xl mx-auto px-8 py-32">
-        <h2 class="text-[10px] font-black uppercase tracking-[0.5em] text-indigo-400 mb-16">Professional Journey</h2>
-        <div id="exp-target" class="space-y-8">
-            <!-- Dynamic Content -->
-        </div>
+    <!-- Document Archive -->
+    <section id="documents" class="max-w-6xl mx-auto px-8 py-20">
+        <h2 class="tag mb-12">Asset Vault (PDF)</h2>
+        <div id="doc-target" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"></div>
     </section>
 
-    <!-- Documents -->
-    <section id="documents" class="max-w-6xl mx-auto px-8 py-32">
-        <h2 class="text-[10px] font-black uppercase tracking-[0.5em] text-purple-400 mb-16">Asset Archive</h2>
-        <div id="doc-target" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <!-- Dynamic Content -->
-        </div>
-    </section>
-
-    <footer class="py-20 text-center border-t border-gray-100">
-        <p class="text-[10px] font-bold uppercase tracking-[0.5em] text-gray-300">Cliffort Mosebi Mmakola &copy; 2024</p>
+    <footer class="py-20 text-center">
+        <p class="text-[9px] font-black uppercase tracking-[0.6em] text-gray-300">Cliffort Mosebi Mmakola &copy; 2024</p>
     </footer>
 
     <script>
-        // P5.js BACKGROUND ARTWORK
-        let dots = [];
-        const DOT_COUNT = 50;
-
+        // P5.js GRADIENT ARTWORK
+        let nodes = [];
         function setup() {
-            const canvas = createCanvas(windowWidth, windowHeight);
+            let canvas = createCanvas(windowWidth, windowHeight);
             canvas.parent('canvas-container');
-            for(let i=0; i<DOT_COUNT; i++) dots.push(new Dot(i));
+            for(let i=0; i<45; i++) nodes.push(new Node(i));
         }
 
         function draw() {
             clear();
-            dots.forEach(d => {
-                d.update();
-                d.draw();
-                d.connect(dots);
-            });
+            nodes.forEach(n => { n.move(); n.show(); n.link(nodes); });
         }
 
-        class Dot {
+        class Node {
             constructor(i) {
                 this.pos = createVector(random(width), random(height));
-                this.vel = createVector(random(-0.5, 0.5), random(-0.5, 0.5));
-                // Gradient selection based on index
-                this.color = lerpColor(color('#6366f1'), color('#ec4899'), i/DOT_COUNT);
+                this.vel = createVector(random(-0.4, 0.4), random(-0.4, 0.4));
+                // Blue to Purple to Pink lerp
+                if (i % 3 == 0) this.c = color('#3b82f6');
+                else if (i % 3 == 1) this.c = color('#a855f7');
+                else this.c = color('#ec4899');
             }
-            update() {
+            move() {
                 this.pos.add(this.vel);
-                if(this.pos.x < 0 || this.pos.x > width) this.vel.x *= -1;
-                if(this.pos.y < 0 || this.pos.y > height) this.vel.y *= -1;
+                if(this.pos.x<0 || this.pos.x>width) this.vel.x*=-1;
+                if(this.pos.y<0 || this.pos.y>height) this.vel.y*=-1;
             }
-            draw() {
-                noStroke();
-                this.color.setAlpha(100);
-                fill(this.color);
-                circle(this.pos.x, this.pos.y, 4);
-            }
-            connect(others) {
+            show() { noStroke(); fill(this.c); circle(this.pos.x, this.pos.y, 2); }
+            link(others) {
                 others.forEach(o => {
                     let d = dist(this.pos.x, this.pos.y, o.pos.x, o.pos.y);
                     if(d < 200) {
-                        let strokeCol = lerpColor(this.color, o.color, 0.5);
-                        strokeCol.setAlpha(map(d, 0, 200, 60, 0));
-                        stroke(strokeCol);
-                        strokeWeight(1);
+                        let strokeColor = lerpColor(this.c, o.c, 0.5);
+                        strokeColor.setAlpha(map(d, 0, 200, 50, 0));
+                        stroke(strokeColor);
+                        strokeWeight(0.5);
                         line(this.pos.x, this.pos.y, o.pos.x, o.pos.y);
                     }
                 });
             }
         }
 
-        // DATA LOADING LOGIC
-        async function init() {
-            try {
-                const response = await fetch('data.json');
-                const data = await response.json();
+        // LOAD DATA
+        async function loadContent() {
+            const res = await fetch('data.json');
+            const data = await res.json();
 
-                // Build Experience
-                const expTarget = document.getElementById('exp-target');
-                data.experience.forEach(exp => {
-                    const bullets = exp.details.map(item => `<li class="mb-3 pl-4 border-l border-indigo-100 italic">"${item}"</li>`).join('');
-                    expTarget.innerHTML += `
-                        <div class="glass-card p-12">
-                            <div class="flex flex-col md:flex-row justify-between items-start mb-8">
-                                <div>
-                                    <h3 class="text-2xl font-black text-gray-900">${exp.title}</h3>
-                                    <p class="text-indigo-600 font-bold uppercase tracking-widest text-[11px] mt-2">${exp.company}</p>
-                                </div>
-                                <span class="bg-indigo-50 text-indigo-500 px-4 py-1 rounded-full text-[10px] font-black mt-4 md:mt-0">${exp.period}</span>
+            // Projects
+            data.projects.forEach(p => {
+                document.getElementById('project-target').innerHTML += `
+                    <div class="glass-card p-10 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-black mb-2">${p.title}</h3>
+                            <p class="text-xs font-bold text-indigo-500 mb-6 uppercase tracking-widest">${p.subtitle}</p>
+                            <p class="text-gray-500 text-sm leading-relaxed mb-6">${p.description}</p>
+                            <div class="flex flex-wrap gap-2">
+                                ${p.tech.map(t => `<span class="text-[9px] bg-gray-100 px-2 py-1 rounded font-bold">${t}</span>`).join('')}
                             </div>
-                            <ul class="text-gray-500 text-sm leading-relaxed space-y-2">
-                                ${bullets}
-                            </ul>
                         </div>
-                    `;
-                });
+                        <a href="${p.link}" class="mt-8 text-xs font-black border-b-2 border-black inline-block w-max">View Implementation →</a>
+                    </div>
+                `;
+            });
 
-                // Build Documents
-                const docTarget = document.getElementById('doc-target');
-                data.documents.forEach(doc => {
-                    docTarget.innerHTML += `
-                        <a href="${doc.file}" target="_blank" class="glass-card p-8 flex flex-col justify-between aspect-square group">
-                            <span class="text-[9px] font-black uppercase tracking-widest text-gray-400 group-hover:text-indigo-500 transition">${doc.tag}</span>
-                            <div>
-                                <h4 class="text-sm font-bold text-gray-800 leading-tight">${doc.name}</h4>
-                                <div class="w-8 h-[2px] bg-indigo-200 mt-4 group-hover:w-full transition-all"></div>
-                            </div>
-                        </a>
-                    `;
-                });
+            // Experience
+            data.experience.forEach(e => {
+                document.getElementById('exp-target').innerHTML += `
+                    <div>
+                        <h3 class="text-lg font-bold">${e.title}</h3>
+                        <p class="text-xs font-bold text-gray-400 mb-4">${e.company} | ${e.period}</p>
+                        <ul class="text-sm text-gray-500 space-y-2">${e.details.map(d => `<li>• ${d}</li>`).join('')}</ul>
+                    </div>
+                `;
+            });
 
-            } catch (err) {
-                console.error("JSON Load Error:", err);
-            }
+            // Certificates
+            data.certificates.forEach(c => {
+                document.getElementById('cert-target').innerHTML += `
+                    <div class="glass-card p-6">
+                        <h3 class="text-sm font-black mb-1">${c.title}</h3>
+                        <p class="text-[10px] font-bold text-indigo-500 uppercase mb-4">${c.provider}</p>
+                        <p class="text-xs text-gray-500 leading-relaxed italic">${c.desc}</p>
+                    </div>
+                `;
+            });
+
+            // Documents
+            data.documents.forEach(d => {
+                document.getElementById('doc-target').innerHTML += `
+                    <a href="${d.file}" target="_blank" class="glass-card p-6 flex items-center justify-between group">
+                        <div>
+                            <span class="text-[8px] font-black text-gray-300 uppercase block">${d.tag}</span>
+                            <span class="text-xs font-bold group-hover:text-indigo-600 transition">${d.name}</span>
+                        </div>
+                        <span class="text-gray-200">→</span>
+                    </a>
+                `;
+            });
         }
 
         window.onresize = () => resizeCanvas(windowWidth, windowHeight);
-        init();
+        loadContent();
     </script>
 </body>
 </html>
