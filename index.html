@@ -57,11 +57,11 @@
     <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-lg border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
             <div class="font-extrabold tracking-tighter text-lg uppercase">C<span class="text-indigo-600">.</span>MMAKOLA</div>
-            <div class="hidden md:flex gap-8 text-[10px] font-black uppercase tracking-widest">
-                <a href="#about" class="hover:text-indigo-600">About</a>
+            <div class="hidden md:flex gap-8 text-[10px] font-black uppercase tracking-widest items-center">
+                <a href="tel:0790233128" class="text-slate-500 hover:text-indigo-600">079 023 3128</a>
                 <a href="#projects" class="hover:text-indigo-600">Projects</a>
                 <a href="https://github.com/CliffortMC08" target="_blank" class="hover:text-indigo-600">GitHub</a>
-                <a href="https://linkedin.com/in/cliffortmmakola" target="_blank" class="text-indigo-600 border-b border-indigo-600">LinkedIn</a>
+                <a href="https://linkedin.com/in/cliffortmmakola" target="_blank" class="text-indigo-600 border-b-2 border-indigo-600 pb-1">LinkedIn</a>
             </div>
         </div>
     </nav>
@@ -75,11 +75,14 @@
                     Metallurgical <br> <span class="gradient-text">Innovation</span> & <br> Data Science.
                 </h1>
                 <p class="max-w-xl text-md md:text-lg text-slate-600 font-medium leading-relaxed mb-10 mx-auto lg:mx-0">
-                    Bridging industrial engineering with Machine Learning. Curating digital legacies and building metallurgical tools for a data-driven future.
+                    Bridging industrial engineering with Machine Learning. Developing metallurgical tools and digital galleries for a data-driven future.
                 </p>
-                <div class="flex flex-wrap justify-center lg:justify-start gap-6">
-                    <a href="mailto:c8cliffort@gmail.com" class="bg-indigo-600 text-white px-8 py-4 rounded-xl font-bold text-xs uppercase tracking-widest">Email Me</a>
-                    <a href="https://github.com/CliffortMC08" target="_blank" class="bg-white border border-slate-200 px-8 py-4 rounded-xl font-bold text-xs uppercase tracking-widest hover:bg-slate-50 transition">GitHub</a>
+                <div class="flex flex-wrap justify-center lg:justify-start gap-6 items-center">
+                    <a href="mailto:c8cliffort@gmail.com" class="bg-indigo-600 text-white px-8 py-4 rounded-xl font-bold text-xs uppercase tracking-widest shadow-lg shadow-indigo-200">Email Me</a>
+                    <a href="tel:0790233128" class="text-slate-900 font-bold text-xs uppercase tracking-widest flex items-center gap-2">
+                        <span class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-indigo-600 italic">tel</span> 
+                        079 023 3128
+                    </a>
                 </div>
             </div>
             <div class="lg:col-span-5 order-1 lg:order-2 flex justify-center">
@@ -92,39 +95,40 @@
     </header>
 
     <main class="max-w-7xl mx-auto px-6 relative z-10">
-        <!-- Technical Grid -->
+        <!-- Technical Pillars -->
         <section class="py-20 grid grid-cols-1 md:grid-cols-3 gap-6">
             <div class="card-spec p-8 rounded-3xl">
                 <h3 class="text-indigo-600 font-black text-[9px] uppercase tracking-widest mb-4 italic">The Foundation</h3>
                 <h4 class="text-lg font-bold">Metallurgy</h4>
-                <p class="text-slate-500 text-sm mt-2">Expertise in microstructural evaluation, failure analysis, and synthetic diamonds.</p>
+                <p class="text-slate-500 text-sm mt-2">Specialized in microstructural evaluation, failure analysis, and synthetic diamond processing.</p>
             </div>
             <div class="card-spec p-8 rounded-3xl">
                 <h3 class="text-purple-600 font-black text-[9px] uppercase tracking-widest mb-4 italic">The Intelligence</h3>
                 <h4 class="text-lg font-bold">AI Systems</h4>
-                <p class="text-slate-500 text-sm mt-2">Specializing in Deep Learning, Computer Vision, and high-quality Data Annotation.</p>
+                <p class="text-slate-500 text-sm mt-2">Building Deep Learning pipelines, computer vision models, and data annotation workflows.</p>
             </div>
             <div class="card-spec p-8 rounded-3xl">
                 <h3 class="text-pink-600 font-black text-[9px] uppercase tracking-widest mb-4 italic">The Delivery</h3>
                 <h4 class="text-lg font-bold">Web & App Dev</h4>
-                <p class="text-slate-500 text-sm mt-2">Developing clean, responsive interfaces (Next.js, PyQt) for complex data sets.</p>
+                <p class="text-slate-500 text-sm mt-2">Designing responsive interfaces for industrial software and curated community galleries.</p>
             </div>
         </section>
 
-        <!-- Projects -->
+        <!-- Dynamic Projects -->
         <section id="projects" class="py-24">
-            <span class="section-label">Digital Solutions</span>
-            <div id="project-target" class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12"></div>
+            <span class="section-label">Digital Solutions & Gallery</span>
+            <div id="project-target" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12"></div>
         </section>
 
-        <!-- Experience & Archive -->
+        <!-- Experience & Training -->
         <section id="experience" class="py-24 border-t border-slate-100">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
                 <div><span class="section-label">Experience</span><div id="exp-target" class="space-y-12 mt-8"></div></div>
-                <div><span class="section-label">Training</span><div id="cert-target" class="space-y-6 mt-8"></div></div>
+                <div><span class="section-label">Machine Learning</span><div id="cert-target" class="space-y-6 mt-8"></div></div>
             </div>
         </section>
 
+        <!-- Document Archive -->
         <section id="documents" class="py-24 border-t border-slate-100">
             <span class="section-label">Archive Vault</span>
             <div id="doc-target" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8"></div>
@@ -132,7 +136,7 @@
     </main>
 
     <footer class="py-20 text-center text-slate-300">
-        <p class="text-[9px] font-black uppercase tracking-[0.5em]">Cliffort Mmakola &bull; 2024</p>
+        <p class="text-[9px] font-black uppercase tracking-[0.5em]">Cliffort Mmakola &bull; 079 023 3128 &bull; 2024</p>
     </footer>
 
     <script>
@@ -143,11 +147,11 @@
             let canvas = createCanvas(windowWidth, windowHeight);
             canvas.parent('canvas-container');
             
-            // RESPONSIBILITY LOGIC: Reduce background clutter on mobile
+            // RESPONSIBILITY LOGIC: Ensure mobile isn't clustered
             if (windowWidth < 768) {
-                dotCount = 25; threshold = 120;
+                dotCount = 20; threshold = 110;
             } else {
-                dotCount = 55; threshold = 180;
+                dotCount = 50; threshold = 180;
             }
             
             for(let i=0; i<dotCount; i++) dots.push(new Node(i));
@@ -162,7 +166,7 @@
         class Node {
             constructor(i) {
                 this.pos = createVector(random(width), random(height));
-                this.vel = createVector(random(-0.5, 0.5), random(-0.5, 0.5));
+                this.vel = createVector(random(-0.4, 0.4), random(-0.4, 0.4));
                 if(i%3==0) this.c = color('#6366f1');
                 else if(i%3==1) this.c = color('#a855f7');
                 else this.c = color('#ec4899');
@@ -181,18 +185,18 @@
                 for (let i = 0; i < others.length; i++) {
                     let d1 = dist(this.pos.x, this.pos.y, others[i].pos.x, others[i].pos.y);
                     if (d1 < threshold) {
-                        strokeWeight(1);
+                        strokeWeight(1.2);
                         let sc = lerpColor(this.c, others[i].c, 0.5);
-                        sc.setAlpha(map(d1, 0, threshold, 120, 0));
+                        sc.setAlpha(map(d1, 0, threshold, 140, 0));
                         stroke(sc); line(this.pos.x, this.pos.y, others[i].pos.x, others[i].pos.y);
 
-                        // Only draw triangle fills on Desktop to save performance
+                        // Triangle fills only on Desktop
                         if (windowWidth > 768) {
                             for (let j = i + 1; j < others.length; j++) {
                                 let d2 = dist(others[i].pos.x, others[i].pos.y, others[j].pos.x, others[j].pos.y);
                                 if (d2 < threshold) {
                                     noStroke(); let triCol = lerpColor(this.c, others[j].c, 0.5);
-                                    triCol.setAlpha(map(d1+d2, 0, threshold*2, 40, 0));
+                                    triCol.setAlpha(map(d1+d2, 0, threshold*2, 35, 0));
                                     fill(triCol); triangle(this.pos.x, this.pos.y, others[i].pos.x, others[i].pos.y, others[j].pos.x, others[j].pos.y);
                                 }
                             }
@@ -203,52 +207,54 @@
         }
 
         async function init() {
-            const res = await fetch('data.json');
-            const data = await res.json();
+            try {
+                const res = await fetch('data.json');
+                const data = await res.json();
 
-            data.projects.forEach(p => {
-                document.getElementById('project-target').innerHTML += `
-                    <div class="card-spec p-10 rounded-[40px] flex flex-col justify-between h-full">
-                        <div>
-                            <div class="flex flex-wrap gap-2 mb-6">
-                                ${p.tech.map(t => `<span class="bg-slate-900 text-white text-[8px] font-black px-2 py-1 rounded tracking-tighter uppercase">${t}</span>`).join('')}
+                data.projects.forEach(p => {
+                    document.getElementById('project-target').innerHTML += `
+                        <div class="card-spec p-10 rounded-[40px] flex flex-col justify-between h-full">
+                            <div>
+                                <div class="flex flex-wrap gap-2 mb-6">
+                                    ${p.tech.map(t => `<span class="bg-indigo-50 text-indigo-600 text-[8px] font-black px-2 py-1 rounded tracking-widest uppercase">${t}</span>`).join('')}
+                                </div>
+                                <h3 class="text-xl font-extrabold mb-3 leading-tight uppercase tracking-tight">${p.title}</h3>
+                                <p class="text-slate-500 text-sm font-medium mb-8 leading-relaxed italic">${p.description}</p>
                             </div>
-                            <h3 class="text-2xl font-extrabold mb-3 leading-tight">${p.title}</h3>
-                            <p class="text-slate-500 text-sm font-medium mb-8">${p.description}</p>
-                        </div>
-                        <a href="${p.link}" target="_blank" class="text-[10px] font-black uppercase tracking-widest text-indigo-600 border-b-2 border-indigo-600 pb-1 w-max">Visit Project →</a>
-                    </div>`;
-            });
+                            <a href="${p.link}" target="_blank" class="text-[10px] font-black uppercase tracking-widest text-indigo-600 border-b-2 border-indigo-600 pb-1 w-max">Visit Site →</a>
+                        </div>`;
+                });
 
-            data.experience.forEach(e => {
-                document.getElementById('exp-target').innerHTML += `
-                    <div class="relative pl-10 border-l-2 border-slate-100">
-                        <div class="absolute -left-[11px] top-1 w-5 h-5 bg-indigo-600 rounded-full border-4 border-white shadow-sm"></div>
-                        <h4 class="text-xl font-extrabold leading-none">${e.title}</h4>
-                        <p class="text-[9px] font-black text-slate-400 uppercase mt-2 mb-6 tracking-widest">${e.company} | ${e.period}</p>
-                        <ul class="text-slate-500 text-sm space-y-3 font-medium italic">${e.details.map(d => `<li>• ${d}</li>`).join('')}</ul>
-                    </div>`;
-            });
+                data.experience.forEach(e => {
+                    document.getElementById('exp-target').innerHTML += `
+                        <div class="relative pl-10 border-l-2 border-indigo-50">
+                            <div class="absolute -left-[11px] top-1 w-5 h-5 bg-indigo-600 rounded-full border-4 border-white"></div>
+                            <h4 class="text-lg font-extrabold tracking-tight uppercase leading-none">${e.title}</h4>
+                            <p class="text-[9px] font-bold text-slate-400 uppercase mt-2 mb-6 tracking-[0.2em]">${e.company} | ${e.period}</p>
+                            <ul class="text-slate-500 text-sm space-y-3 font-medium">${e.details.map(d => `<li>• ${d}</li>`).join('')}</ul>
+                        </div>`;
+                });
 
-            data.certificates.forEach(c => {
-                document.getElementById('cert-target').innerHTML += `
-                    <div class="card-spec p-6 rounded-3xl">
-                        <h4 class="text-sm font-black">${c.title}</h4>
-                        <p class="text-[9px] font-black text-purple-600 uppercase mt-1 mb-4 tracking-widest">${c.provider}</p>
-                        <p class="text-xs text-slate-500 font-medium italic">${c.desc}</p>
-                    </div>`;
-            });
+                data.certificates.forEach(c => {
+                    document.getElementById('cert-target').innerHTML += `
+                        <div class="card-spec p-6 rounded-3xl">
+                            <h4 class="text-sm font-black">${c.title}</h4>
+                            <p class="text-[9px] font-black text-purple-600 uppercase mt-1 mb-4 tracking-widest">${c.provider}</p>
+                            <p class="text-xs text-slate-500 font-medium italic">${c.desc}</p>
+                        </div>`;
+                });
 
-            data.documents.forEach(d => {
-                document.getElementById('doc-target').innerHTML += `
-                    <a href="${d.file}" target="_blank" class="card-spec p-8 rounded-3xl flex flex-col justify-between aspect-square group">
-                        <span class="text-[9px] font-black text-slate-300 uppercase tracking-widest group-hover:text-indigo-600">${d.tag}</span>
-                        <div>
-                            <h5 class="text-xs font-black uppercase tracking-tight">${d.name}</h5>
-                            <div class="w-6 h-1 bg-indigo-600 mt-4 group-hover:w-full transition-all"></div>
-                        </div>
-                    </a>`;
-            });
+                data.documents.forEach(d => {
+                    document.getElementById('doc-target').innerHTML += `
+                        <a href="${d.file}" target="_blank" class="card-spec p-8 rounded-[32px] flex flex-col justify-between aspect-square group">
+                            <span class="text-[9px] font-black text-slate-300 uppercase tracking-widest group-hover:text-indigo-600">${d.tag}</span>
+                            <div>
+                                <h5 class="text-xs font-black uppercase tracking-tighter">${d.name}</h5>
+                                <div class="w-6 h-1 bg-indigo-600 mt-4 group-hover:w-full transition-all"></div>
+                            </div>
+                        </a>`;
+                });
+            } catch (err) { console.error("Database failed to load:", err); }
         }
 
         window.onresize = () => resizeCanvas(windowWidth, windowHeight);
