@@ -1,16 +1,23 @@
 {
   "projects": [
     {
+      "title": "IShowSpeed African Tour Gallery",
+      "subtitle": "Community Fan Art Curation",
+      "description": "A web-based gallery curating and showcasing the best fan art from IShowSpeed's historic tour across Africa. Built to preserve the artistic legacy of the tour.",
+      "tech": ["Next.js", "Vercel", "UI/UX", "Community Curation"],
+      "link": "https://ishowspeed-gallery-6d48.vercel.app"
+    },
+    {
       "title": "Pearlite Phase Analyser",
       "subtitle": "Microstructural Computer Vision Tool",
-      "description": "Developed an independent software solution to remove subjectivity from pearlite quantification in steel alloys. Built using a full Python stack (PyQt5, Pillow, QPainter) with automated PDF report generation via ReportLab.",
-      "tech": ["Python", "PyQt5", "Image Processing", "Event-Driven Architecture"],
-      "link": "#"
+      "description": "Developed an independent software solution to remove subjectivity from pearlite quantification in steel alloys. Built using a PyQt5/Python stack with automated PDF reporting.",
+      "tech": ["Python", "PyQt5", "Image Processing", "Metallurgy"],
+      "link": "https://github.com/CliffortMC08"
     },
     {
       "title": "Live AI Mineral Identifier",
       "subtitle": "Deep Learning Web Application",
-      "description": "Built a real-time mineral identification system using an EfficientNet-B3 model trained on 18,000+ images. Achieved 73.22% accuracy on messy, real-world data and deployed via a Gradio web interface.",
+      "description": "Real-time mineral identification system using an EfficientNet-B3 model. Achieved 73.22% accuracy on 18,000+ images. Deployed via Gradio.",
       "tech": ["EfficientNet-B3", "Computer Vision", "Gradio", "Python"],
       "link": "https://lnkd.in/dBuP5ShF"
     }
@@ -31,8 +38,8 @@
       "company": "Glencore & Element 6",
       "period": "2019 — 2020",
       "details": [
-        "Glencore: Optimized coal washing processes and magnetite recovery circuits.",
-        "Element 6: Authored pre-commissioning SOPs and verified safety via HAZOP for synthetic diamond production."
+        "Glencore: Optimized coal washing processes and magnetite recovery.",
+        "Element 6: Authored SOPs and verified safety via HAZOP for synthetic diamonds."
       ]
     }
   ],
@@ -40,11 +47,11 @@
     {
       "title": "Hands-On Data Annotation",
       "provider": "Applied Machine Learning (LinkedIn Learning)",
-      "desc": "Practical experience in Image Classification, Object Detection, and NLP using CVAT, Roboflow, and AWS SageMaker Ground Truth."
+      "desc": "Practical experience in Image Classification, Object Detection, and NLP using CVAT, Roboflow, and AWS SageMaker."
     }
   ],
   "documents": [
-    { "name": "Main Resume", "file": "assets/resume.pdf", "tag": "CV" },
+    { "name": "Professional CV", "file": "assets/resume.pdf", "tag": "CV" },
     { "name": "ALX Data Science", "file": "assets/alx_cert.pdf", "tag": "CERT" },
     { "name": "Metallurgy Diploma", "file": "assets/tut_diploma.pdf", "tag": "DEGREE" },
     { "name": "Annotation Cert", "file": "assets/annotation_cert.pdf", "tag": "COURSE" }
