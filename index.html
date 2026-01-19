@@ -18,22 +18,29 @@
             scroll-behavior: smooth;
         }
 
-        #canvas-container { position: fixed; top: 0; left: 0; z-index: -1; opacity: 0.5; }
+        /* Increased visibility for the background container */
+        #canvas-container { 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            z-index: -1; 
+            opacity: 0.9; /* Boosted from 0.5 */
+        }
 
         /* Typography */
         .h1-hero { font-size: clamp(2.5rem, 6vw, 5rem); line-height: 1; letter-spacing: -0.04em; }
-        .section-label { font-size: 0.65rem; font-weight: 800; letter-spacing: 0.4em; color: #94a3b8; text-transform: uppercase; margin-bottom: 2rem; display: block; }
+        .section-label { font-size: 0.65rem; font-weight: 800; letter-spacing: 0.4em; color: #64748b; text-transform: uppercase; margin-bottom: 2rem; display: block; }
         
-        /* Glassmorphism */
+        /* Glassmorphism Cards - Slightly more opaque to maintain readability over the brighter background */
         .card-spec {
-            background: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.75);
             backdrop-filter: blur(20px);
-            border: 1px solid rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(0, 0, 0, 0.08);
             transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
         }
         .card-spec:hover {
-            border: 1px solid rgba(99, 102, 241, 0.2);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(99, 102, 241, 0.4);
+            box-shadow: 0 20px 50px rgba(99, 102, 241, 0.1);
             transform: translateY(-8px);
         }
 
@@ -44,11 +51,7 @@
         }
 
         /* Profile Image Styling */
-        .profile-wrapper {
-            position: relative;
-            width: 100%;
-            max-width: 400px;
-        }
+        .profile-wrapper { position: relative; width: 100%; max-width: 380px; }
         .profile-image {
             width: 100%;
             aspect-ratio: 1/1;
@@ -56,21 +59,21 @@
             border-radius: 40px;
             z-index: 10;
             position: relative;
-            border: 8px solid white;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            border: 6px solid white;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.15);
         }
         .profile-glow {
             position: absolute;
-            top: -15px; right: -15px; bottom: -15px; left: -15px;
+            top: -20px; right: -20px; bottom: -20px; left: -20px;
             background: linear-gradient(135deg, var(--accent-indigo), var(--accent-purple), var(--accent-pink));
-            border-radius: 50px;
+            border-radius: 55px;
             z-index: 1;
-            filter: blur(20px);
-            opacity: 0.3;
+            filter: blur(30px);
+            opacity: 0.4;
         }
 
-        ::-webkit-scrollbar { width: 4px; }
-        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-thumb { background: #6366f1; border-radius: 10px; }
     </style>
 </head>
 <body class="antialiased">
@@ -78,101 +81,107 @@
     <div id="canvas-container"></div>
 
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 bg-white/60 backdrop-blur-lg border-b border-gray-100">
+    <nav class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-xl border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-8 h-20 flex justify-between items-center">
             <div class="font-extrabold tracking-tighter text-xl">C<span class="text-indigo-600">.</span>MMAKOLA</div>
-            <div class="hidden md:flex gap-12 text-[10px] font-bold uppercase tracking-widest">
+            <div class="hidden md:flex gap-10 text-[10px] font-black uppercase tracking-widest">
                 <a href="#about" class="hover:text-indigo-600 transition">Home</a>
                 <a href="#projects" class="hover:text-indigo-600 transition">Projects</a>
                 <a href="#experience" class="hover:text-indigo-600 transition">Experience</a>
-                <a href="#documents" class="text-indigo-600 border-b border-indigo-600">Document Vault</a>
+                <a href="#documents" class="text-white bg-indigo-600 px-4 py-2 rounded-lg hover:bg-indigo-700 transition">Archive Vault</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <header id="about" class="min-h-screen flex items-center max-w-7xl mx-auto px-8 pt-20">
+    <header id="about" class="min-h-screen flex items-center max-w-7xl mx-auto px-8 pt-24">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center w-full">
-            
-            <!-- Hero Left: Text Content -->
             <div class="lg:col-span-7 order-2 lg:order-1">
                 <span class="section-label">Engineering Portfolio 2024</span>
                 <h1 class="h1-hero font-extrabold mb-8">
                     Metallurgical <br> <span class="gradient-text">Innovation</span> & <br> Data Science.
                 </h1>
-                <p class="max-w-xl text-lg text-slate-500 font-medium leading-relaxed mb-10">
-                    Bridging the gap between <b>Physical Metallurgy</b> and <b>Applied Machine Learning</b>. Building tools that transform subjective analysis into objective, data-driven industrial intelligence.
+                <p class="max-w-xl text-lg text-slate-600 font-medium leading-relaxed mb-10">
+                    Bridging the gap between <b>Physical Metallurgy</b> and <b>Applied Machine Learning</b>. Building tools that transform subjective analysis into objective industrial intelligence.
                 </p>
                 <div class="flex flex-wrap gap-6 items-center">
-                    <a href="mailto:c8cliffort@gmail.com" class="bg-slate-900 text-white px-8 py-4 rounded-2xl font-bold text-sm transition hover:bg-slate-800 shadow-xl shadow-slate-200">Email Me</a>
-                    <a href="https://linkedin.com/in/cliffortmmakola" target="_blank" class="font-bold border-b-2 border-slate-900 pb-1 text-xs uppercase tracking-widest">LinkedIn →</a>
+                    <a href="mailto:c8cliffort@gmail.com" class="bg-indigo-600 text-white px-8 py-4 rounded-2xl font-bold text-sm transition hover:bg-indigo-700 shadow-xl shadow-indigo-100">Direct Email</a>
+                    <a href="https://linkedin.com/in/cliffortmmakola" target="_blank" class="font-bold border-b-2 border-indigo-600 pb-1 text-[11px] uppercase tracking-widest text-indigo-600">LinkedIn Profile →</a>
                 </div>
             </div>
-
-            <!-- Hero Right: Profile Picture -->
             <div class="lg:col-span-5 order-1 lg:order-2 flex justify-center lg:justify-end">
                 <div class="profile-wrapper">
                     <div class="profile-glow"></div>
-                    <img src="assets/profile.png" alt="Cliffort Mosebi Mmakola" class="profile-image">
+                    <img src="assets/profile.jpg" alt="Cliffort Mosebi Mmakola" class="profile-image">
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Expertise Bridge -->
-    <section class="max-w-7xl mx-auto px-8 py-20 grid grid-cols-1 md:grid-cols-3 gap-12">
-        <div class="card-spec p-8 rounded-3xl">
-            <h3 class="font-bold text-indigo-600 text-[10px] tracking-widest uppercase mb-4">01. Metallurgy</h3>
-            <p class="text-slate-500 text-sm leading-relaxed font-medium">5+ Years experience in failure analysis, wire manufacturing, and synthetic diamonds.</p>
-        </div>
-        <div class="card-spec p-8 rounded-3xl">
-            <h3 class="font-bold text-purple-600 text-[10px] tracking-widest uppercase mb-4">02. Data Science</h3>
-            <p class="text-slate-500 text-sm leading-relaxed font-medium">Specializing in computer vision models and machine learning for microstructural analysis.</p>
-        </div>
-        <div class="card-spec p-8 rounded-3xl">
-            <h3 class="font-bold text-pink-600 text-[10px] tracking-widest uppercase mb-4">03. Digital Tools</h3>
-            <p class="text-slate-500 text-sm leading-relaxed font-medium">Developing PyQt5 and web-based applications for automated metallurgical reporting.</p>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="max-w-7xl mx-auto px-8 py-24">
-        <span class="section-label">Selected Projects</span>
-        <div id="project-target" class="grid grid-cols-1 md:grid-cols-2 gap-10"></div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="max-w-7xl mx-auto px-8 py-32 border-t border-slate-100">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-24">
-            <div>
-                <span class="section-label">Professional History</span>
-                <div id="exp-target" class="space-y-16"></div>
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-8">
+        
+        <!-- Expertise Bridge -->
+        <section class="py-24 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="card-spec p-10 rounded-3xl">
+                <h3 class="font-black text-indigo-600 text-[10px] tracking-[0.2em] uppercase mb-4 italic">Core Discipline</h3>
+                <h4 class="text-xl font-bold mb-3">Metallurgy</h4>
+                <p class="text-slate-600 text-sm font-medium">Failure analysis, wire manufacturing, and synthetic diamond processing.</p>
             </div>
-            <div>
-                <span class="section-label">Advanced Certification</span>
-                <div id="cert-target" class="space-y-8"></div>
+            <div class="card-spec p-10 rounded-3xl">
+                <h3 class="font-black text-purple-600 text-[10px] tracking-[0.2em] uppercase mb-4 italic">Strategic Skill</h3>
+                <h4 class="text-xl font-bold mb-3">Data Science</h4>
+                <p class="text-slate-600 text-sm font-medium">Computer vision, deep learning, and data annotation workflows.</p>
             </div>
-        </div>
-    </section>
+            <div class="card-spec p-10 rounded-3xl">
+                <h3 class="font-black text-pink-600 text-[10px] tracking-[0.2em] uppercase mb-4 italic">Applied Tech</h3>
+                <h4 class="text-xl font-bold mb-3">Digital Tools</h4>
+                <p class="text-slate-600 text-sm font-medium">Building PyQt5 and web apps for automated microstructure reporting.</p>
+            </div>
+        </section>
 
-    <!-- Asset Vault Section -->
-    <section id="documents" class="max-w-7xl mx-auto px-8 py-32 border-t border-slate-100 bg-slate-50/20">
-        <span class="section-label">Document Archive</span>
-        <div id="doc-target" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
-    </section>
+        <!-- Projects Section -->
+        <section id="projects" class="py-24">
+            <span class="section-label">Industrial Solutions</span>
+            <div id="project-target" class="grid grid-cols-1 md:grid-cols-2 gap-12"></div>
+        </section>
+
+        <!-- Experience -->
+        <section id="experience" class="py-32 border-t border-slate-100">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-24">
+                <div>
+                    <span class="section-label">Experience Timeline</span>
+                    <div id="exp-target" class="space-y-16"></div>
+                </div>
+                <div>
+                    <span class="section-label">Advanced Learning</span>
+                    <div id="cert-target" class="space-y-8"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Asset Vault -->
+        <section id="documents" class="py-32 border-t border-slate-100">
+            <span class="section-label">Asset Archive</span>
+            <div id="doc-target" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+        </section>
+
+    </div>
 
     <footer class="py-24 text-center border-t border-slate-50">
         <div class="font-black text-xl mb-4 tracking-tighter uppercase">Cliffort<span class="text-indigo-600">.</span>M</div>
-        <p class="text-[9px] font-bold uppercase tracking-[0.5em] text-slate-300">Johannesburg, South Africa &bull; 2024</p>
+        <p class="text-[9px] font-bold uppercase tracking-[0.5em] text-slate-400">Johannesburg, South Africa &bull; 2024</p>
     </footer>
 
     <script>
-        // P5.js Generative Lattice (Blue-Purple-Pink)
+        // ENHANCED ARTWORK SETTINGS
         let particles = [];
+        const PARTICLE_COUNT = 65; // Increased density
+
         function setup() {
             let canvas = createCanvas(windowWidth, windowHeight);
             canvas.parent('canvas-container');
-            for(let i=0; i<45; i++) particles.push(new Particle(i));
+            for(let i=0; i<PARTICLE_COUNT; i++) particles.push(new Particle(i));
         }
 
         function draw() {
@@ -183,7 +192,9 @@
         class Particle {
             constructor(i) {
                 this.pos = createVector(random(width), random(height));
-                this.vel = createVector(random(-0.4, 0.4), random(-0.4, 0.4));
+                this.vel = createVector(random(-0.5, 0.5), random(-0.5, 0.5));
+                this.size = 5; // Increased from 2
+                
                 if(i%3==0) this.c = color('#6366f1');
                 else if(i%3==1) this.c = color('#a855f7');
                 else this.c = color('#ec4899');
@@ -193,36 +204,42 @@
                 if(this.pos.x<0 || this.pos.x>width) this.vel.x*=-1;
                 if(this.pos.y<0 || this.pos.y>height) this.vel.y*=-1;
             }
-            display() { noStroke(); this.c.setAlpha(120); fill(this.c); circle(this.pos.x, this.pos.y, 2); }
+            display() { 
+                noStroke(); 
+                this.c.setAlpha(200); // Increased alpha for visibility
+                fill(this.c); 
+                circle(this.pos.x, this.pos.y, this.size); 
+            }
             connect(others) {
                 others.forEach(o => {
                     let d = dist(this.pos.x, this.pos.y, o.pos.x, o.pos.y);
-                    if(d < 220) {
+                    if(d < 240) { // Increased connection distance
                         let sc = lerpColor(this.c, o.c, 0.5);
-                        sc.setAlpha(map(d, 0, 220, 60, 0));
-                        stroke(sc); strokeWeight(0.7); line(this.pos.x, this.pos.y, o.pos.x, o.pos.y);
+                        sc.setAlpha(map(d, 0, 240, 150, 0)); // Doubled line alpha
+                        stroke(sc); 
+                        strokeWeight(1.5); // Thicker lines
+                        line(this.pos.x, this.pos.y, o.pos.x, o.pos.y);
                     }
                 });
             }
         }
 
-        // JSON Loader
-        async function buildPortfolio() {
+        async function init() {
             const res = await fetch('data.json');
             const data = await res.json();
 
             data.projects.forEach(p => {
                 document.getElementById('project-target').innerHTML += `
-                    <div class="card-spec p-12 rounded-[40px] flex flex-col justify-between h-full">
+                    <div class="card-spec p-12 rounded-[48px] flex flex-col justify-between">
                         <div>
-                            <div class="flex gap-2 mb-6 uppercase">
-                                ${p.tech.map(t => `<span class="bg-indigo-50 text-indigo-500 text-[9px] font-black px-3 py-1 rounded-full tracking-widest">${t}</span>`).join('')}
+                            <div class="flex gap-2 mb-8 uppercase">
+                                ${p.tech.map(t => `<span class="bg-indigo-600 text-white text-[9px] font-black px-3 py-1 rounded-full tracking-widest">${t}</span>`).join('')}
                             </div>
                             <h3 class="text-3xl font-extrabold mb-4 leading-tight">${p.title}</h3>
-                            <p class="text-slate-500 text-sm leading-relaxed mb-8 font-medium">${p.description}</p>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-10 font-medium">${p.description}</p>
                         </div>
-                        <a href="${p.link}" target="_blank" class="font-bold text-xs uppercase tracking-widest flex items-center gap-2 group">
-                            Technical Specs <span class="group-hover:translate-x-2 transition-transform">→</span>
+                        <a href="${p.link}" target="_blank" class="font-black text-[10px] uppercase tracking-[0.2em] flex items-center gap-3 group text-indigo-600">
+                            Technical Spec <span class="group-hover:translate-x-3 transition-transform">→</span>
                         </a>
                     </div>
                 `;
@@ -230,12 +247,12 @@
 
             data.experience.forEach(e => {
                 document.getElementById('exp-target').innerHTML += `
-                    <div class="relative pl-10 border-l-2 border-slate-100">
-                        <div class="absolute -left-[9px] top-1 w-4 h-4 bg-slate-900 rounded-full border-4 border-white"></div>
-                        <h4 class="text-xl font-extrabold mb-1">${e.title}</h4>
-                        <p class="text-[10px] font-black text-indigo-500 uppercase tracking-widest mb-6">${e.company} &bull; ${e.period}</p>
-                        <ul class="text-slate-500 text-[13px] leading-relaxed space-y-4 font-medium">
-                            ${e.details.map(d => `<li>&bull; ${d}</li>`).join('')}
+                    <div class="relative pl-12 border-l-4 border-slate-100">
+                        <div class="absolute -left-[14px] top-1 w-6 h-6 bg-indigo-600 rounded-full border-4 border-white"></div>
+                        <h4 class="text-2xl font-black mb-1 leading-none">${e.title}</h4>
+                        <p class="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-8 mt-2">${e.company} &bull; ${e.period}</p>
+                        <ul class="text-slate-600 text-sm leading-relaxed space-y-4 font-medium italic">
+                            ${e.details.map(d => `<li>• ${d}</li>`).join('')}
                         </ul>
                     </div>
                 `;
@@ -243,21 +260,21 @@
 
             data.certificates.forEach(c => {
                 document.getElementById('cert-target').innerHTML += `
-                    <div class="card-spec p-8 rounded-3xl">
-                        <h4 class="text-sm font-extrabold mb-1">${c.title}</h4>
-                        <p class="text-[10px] font-black text-purple-500 uppercase mb-4 tracking-widest">${c.provider}</p>
-                        <p class="text-xs text-slate-500 italic leading-relaxed font-medium">${c.desc}</p>
+                    <div class="card-spec p-8 rounded-[32px]">
+                        <h4 class="text-lg font-black mb-2">${c.title}</h4>
+                        <p class="text-[10px] font-black text-purple-600 uppercase mb-4 tracking-widest">${c.provider}</p>
+                        <p class="text-xs text-slate-600 italic leading-relaxed font-medium">${c.desc}</p>
                     </div>
                 `;
             });
 
             data.documents.forEach(d => {
                 document.getElementById('doc-target').innerHTML += `
-                    <a href="${d.file}" target="_blank" class="card-spec p-8 flex flex-col justify-between aspect-square group rounded-[32px]">
-                        <span class="text-[9px] font-black text-slate-300 uppercase tracking-widest group-hover:text-indigo-500 transition">${d.tag}</span>
+                    <a href="${d.file}" target="_blank" class="card-spec p-10 flex flex-col justify-between aspect-square group rounded-[40px]">
+                        <span class="text-[9px] font-black text-slate-300 uppercase tracking-widest group-hover:text-indigo-600 transition">${d.tag}</span>
                         <div>
-                            <h5 class="text-sm font-bold leading-tight uppercase tracking-tight">${d.name}</h5>
-                            <div class="w-6 h-[2px] bg-slate-200 mt-4 group-hover:w-full transition-all"></div>
+                            <h5 class="text-sm font-black leading-tight uppercase tracking-tight">${d.name}</h5>
+                            <div class="w-8 h-1 bg-indigo-600 mt-4 group-hover:w-full transition-all"></div>
                         </div>
                     </a>
                 `;
@@ -265,7 +282,7 @@
         }
 
         window.onresize = () => resizeCanvas(windowWidth, windowHeight);
-        buildPortfolio();
+        init();
     </script>
 </body>
 </html>
