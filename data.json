@@ -1,0 +1,39 @@
+{
+  "experience": [
+    {
+      "title": "Junior Metallurgist",
+      "company": "Scaw Metals: Haggie-Wire and Strand",
+      "period": "Apr 2021 — Present",
+      "details": [
+        "Led failure analysis and root cause identification for comprehensive technical reports.",
+        "Managed lab operations and provided structured training to metallurgy interns.",
+        "Oversee process improvement initiatives and validate parameters through technical trials."
+      ]
+    },
+    {
+      "title": "Metallurgical Engineering Intern",
+      "company": "Glencore Coal Operations",
+      "period": "Jan 2020 — Dec 2020",
+      "details": [
+        "Optimized coal washing processes and magnetite recovery circuits.",
+        "Analyzed process data to improve recovery rates and reduce operational costs."
+      ]
+    },
+    {
+      "title": "Metallurgical Engineering Intern",
+      "company": "Element 6 (De Beers Group)",
+      "period": "Jan 2019 — Dec 2019",
+      "details": [
+        "Tested operational efficiency of a new chemical treatment plant for synthetic diamond units.",
+        "Authored standard operating procedures (SOPs) pre-commissioning.",
+        "Verified safety compliance via HAZOP; gained expertise in manufacturing polycrystalline diamond compacts."
+      ]
+    }
+  ],
+  "documents": [
+    { "name": "Professional CV", "file": "assets/resume.pdf", "tag": "Resume" },
+    { "name": "ALX Data Science Cert", "file": "assets/alx_cert.pdf", "tag": "Certificate" },
+    { "name": "NDip Metallurgy (TUT)", "file": "assets/tut_diploma.pdf", "tag": "Degree" },
+    { "name": "Accenture Simulation", "file": "assets/accenture_cert.pdf", "tag": "Experience" }
+  ]
+}
